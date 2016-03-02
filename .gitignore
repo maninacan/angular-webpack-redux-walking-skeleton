@@ -103,5 +103,4 @@ coverage/
 npm-debug.log*
 server-compiled/
 docs/
-styles/
 /components/

@@ -8,6 +8,8 @@ To run your server using the new build:
 
 	$ npm start
 
+You will need to have iron-node install for this to work or you can change the script to work with your preferred server.
+
 Navigate to:
 
 	localhost:3000

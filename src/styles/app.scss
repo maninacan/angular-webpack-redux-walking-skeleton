@@ -1,0 +1,149 @@
+////
+/// Root SCSS file
+///
+/// @group app
+////
+///*********** COLORS **************/
+
+///
+$bg: #fff;
+
+$bgMedium: #fff;
+
+$bgLarge: #fff;
+
+$positive: #fff;
+
+$boldBlue: #2E72A5;
+
+///*********** FONTS ***************/
+
+$font-family--primary: sans-serif;
+
+///*********** RESET ***************/
+
+@import "reset";
+
+///********* BOX MODEL HACK ********/
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.awesome {
+  color: $positive;
+  background-color: #111111;
+}
+
+///******* BOOTSTRAP ***************/
+@import url("../../node_modules/bootstrap/dist/css/bootstrap.min.css");
+
+///******* BASE STYLES *************/
+
+body {
+  background: $bg;
+  position: absolute;
+}
+
+body, html {
+  height: 100%;
+  width: 100%;
+}
+
+/* Always provide a class along with the tag declarations
+    for styles makes reuse much easier, and your code
+    more modular */
+
+h1, .heading {
+  color: darken($bg, 75%);
+  font-size: 56px;
+  padding-left: 10px;
+  margin: 0;
+}
+
+h2 {
+  color: darken($bg, 75%);
+  font-size: 45px;
+  padding-left: 10px;
+  margin: 0;
+}
+
+.button, input[type="button"] {
+  margin-top: 10px;
+}
+
+///********* MENU STYLES ***********/
+
+.menu {
+  list-style: none;
+  border-bottom: 0.1em solid black;
+  margin-bottom: 2em;
+  padding: 0 0 0.5em;
+}
+
+.menu li {
+  display: inline;
+}
+
+///******* USERS STYLES ************/
+
+.users {
+  list-style-type: none;
+  padding-left: 10px;
+  font-size: 18px;
+}
+
+.users input {
+  display: block;
+  font-size: 18px;
+  height: 30px;
+  margin: 5px 0;
+}
+
+///********* MEDIA QUERIES ***********/
+/*  These are additive media queries... meaning
+that they override the base styles as needed.
+The accepted base is mobile size screens, you
+then override the styles needed to make things
+more usable as the screen size grows.
+
+It should be noted that if you are using media
+to load background images then you want to
+bracket them. Meaning, that you would use a
+max-width to include them in addition to a
+min-width to override them. This prevents double
+loading across browsers.
+*/
+///***********************************/
+
+@media (min-width: 45em) {
+  body {
+    background: $bgMedium;
+  }
+}
+
+@media (min-width: 65em) {
+  body {
+    background: $bgLarge;
+  }
+}
+
+///********* UTILITIES ***************/
+
+@import "utilities";
+
+.block {
+  display: block;
+}
+
+///******** PROJECT LEVEL ************/
+
+///************ IMPORTS **************/
+@import "../components/majorAppBranch1/main/main";
+@import "../components/majorAppBranch1/songCard/songCard";
+@import "../components/majorAppBranch2/awesomeIncrementer/awesomeIncrementer";
+@import "../components/majorAppBranch2/main/main";
+@import "../components/shared/globalDebug/globalDebug";
+@import "../components/shared/myNavBar/myNavBar";

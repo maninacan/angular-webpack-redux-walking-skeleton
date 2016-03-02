@@ -1,0 +1,40 @@
+///
+/// Micro clearfix mixin
+///
+%clearfix {
+  zoom: 1;
+
+  &:before, &:after {
+    content: "";
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+//extendable clearfix class
+.clearfix {
+  @extend %clearfix;
+}
+
+///
+/// stretch an element, defaults to fill it's containing element.
+/// override any value by passing named argument
+/// cancel any value by passing false (top: false) and that direction won't be applied
+///
+/// Examples:
+/// stretch(); //top:0; right:0; bottom:0; left:0;
+/// stretch($top:200px, $bottom: 100px); //top:200px; bottom:100px;
+/// stretch($top: null, $right: 0, $bottom: 0, $right: 0); //top:0; right:0; bottom:0; left:0;
+/// stretch($left: 50px, $right: 50px); //right:50px; left:50px
+/// stretch($top: 100px, $right: 200px, $bottom: 25px, $left: 200px)
+///
+@mixin stretch($top: 0, $right: 0, $bottom: 0, $left: 0) {
+  position: absolute;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
