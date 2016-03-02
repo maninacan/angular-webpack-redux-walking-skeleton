@@ -1,0 +1,14 @@
+<div class="globalDebug" ng-init="vm.showDebugger = false;">
+	<button
+			class="btn btn-default"
+			ng-click="vm.showDebugger = !vm.showDebugger;">
+		Toggle Filter Debug
+	</button>
+	<div class="global-debug-content">
+		<pre
+		  class="global-debugger"
+		  ng-class="{'visible': vm.showDebugger}">
+    {{ vm.globalState | json }}
+  </pre>
+	</div>
+</div>

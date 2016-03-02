@@ -1,0 +1,50 @@
+// ================================================================================
+// COMPONENT LEVEL: SASS
+// globalDebug
+// Only contains Sass for this component.
+// ================================================================================
+
+// ------------------------------------------------------------------------------
+// COMPONENT LEVEL: VARIABLES
+// ------------------------------------------------------------------------------
+$slate: #434857;
+
+// ------------------------------------------------------------------------------
+// COMPONENT LEVEL: BEM BLOCK
+// ------------------------------------------------------------------------------
+
+.globalDebug {
+  background-color: #434857;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  right: -15px;
+  padding: 10px;
+  overflow: scroll;
+  max-width: 680px;
+
+  button {
+    float: right;
+  }
+
+  &.expanded {
+    bottom: 0;
+    height: 100%;
+  }
+
+  .global-debug-content {
+    height: calc(100% - 40px);
+
+    .global-debugger {
+      display: none;
+      margin: 15px;
+
+      &.visible {
+        display: block;
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+/components
+/gulp-tasks
+/img
+/lib
+node_modules
+/styles
+/.bowerrc
+/.editorconfig
+/.gitignore
+/.jshintrc
+/.karma.js
+/.npmrc
+/.predeploy.js
+/app.js
+/bower.json
+/gulpfile.babel.js
+/index.html

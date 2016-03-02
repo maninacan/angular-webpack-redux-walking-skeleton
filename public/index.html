@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="utf-8">
+	<title>Record Ordinance</title>
+
+	<base href="/">
+</head>
+<body ng-controller="appController as ctrl">
+
+<global-debug></global-debug>
+<my-nav-bar my-nav="ctrl.navPackage"></my-nav-bar>
+
+<ui-view></ui-view>
+
+<script src="build/bundle.js"></script>
+</body>
+<div id="devTools"></div>
+</html>

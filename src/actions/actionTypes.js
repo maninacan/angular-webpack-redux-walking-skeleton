@@ -1,0 +1,9 @@
+// MAB1
+export const SONG_ADDED = 'SONG_ADDED';
+export const MAB1_STATE_RESET = 'MAB1_STATE_RESET';
+
+// MAB2
+export const DATE_SELECTED = 'DATE_SELECTED';
+export const USER_SET = 'USER_SET';
+export const COUNT_INCREMENTED = 'COUNT_INCREMENTED';
+export const MAB2_STATE_RESET = 'MAB2_STATE_RESET';

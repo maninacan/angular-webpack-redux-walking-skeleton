@@ -1,0 +1,13 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">{{ctrl.mySong.trackName}}</h3>
+  </div>
+  <div class="panel-body">
+    <img ng-src="{{ctrl.mySong.artworkUrl100}}" alt="{{ctrl.mySong.collectionName}}">
+    <h6>album: {{ctrl.mySong.collectionName}}</h6>
+    <h6>genre: {{ctrl.mySong.primaryGenreName}}</h6>
+		<h6>track: {{ctrl.mySong.trackNumber}}/{{ctrl.mySong.trackCount}}</h6>
+		<h6>price: {{ctrl.mySong.trackPrice | currency}}</h6>
+		<a target="_blank" href="{{ctrl.mySong.trackViewUrl}}">View in iTunes</a>
+  </div>
+</div>
