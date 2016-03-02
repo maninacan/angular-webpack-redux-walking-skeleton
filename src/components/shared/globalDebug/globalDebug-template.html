@@ -2,7 +2,7 @@
 	<button
 			class="btn btn-default"
 			ng-click="vm.showDebugger = !vm.showDebugger;">
-		Toggle Filter Debug
+		Toggle Redux State
 	</button>
 	<div class="global-debug-content">
 		<pre
@@ -11,4 +11,5 @@
     {{ vm.globalState | json }}
   </pre>
 	</div>
+	<parent-scroll-disable element-selector=".globalDebug"></parent-scroll-disable>
 </div>

@@ -15,15 +15,14 @@ $slate: #434857;
 
 .globalDebug {
   background-color: #434857;
-  color: #fff;
   display: flex;
   flex-direction: column;
   position: fixed;
   z-index: 999;
   top: 0;
-  right: -15px;
+  right: 0;
   padding: 10px;
-  overflow: scroll;
+  overflow: auto;
   max-width: 680px;
 
   button {
