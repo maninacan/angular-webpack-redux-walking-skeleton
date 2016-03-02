@@ -12,41 +12,43 @@ export default function mainController($ngRedux, $scope, itunesApi) {
 		};
 	}
 
-	itunesApi.getMormonTabernacleChoirData().then(response => {
-		console.log('results: ', response.results);
-		const songs = response.results
-		.filter(result => {
-			return result.artistName === 'Mormon Tabernacle Choir' && result.kind === 'song';
-		})
-		.map(result => {
-			const {
-				artworkUrl100,
-				collectionName,
-				trackName,
-				trackCount,
-				trackNumber,
-				trackPrice,
-				primaryGenreName,
-				trackViewUrl,
-				trackTimeMillis
-			} = result;
-			return {
-				artworkUrl100,
-				collectionName,
-				trackName,
-				trackCount,
-				trackNumber,
-				trackPrice,
-				primaryGenreName,
-				trackViewUrl,
-				trackTimeMillis
-			};
-		});
+	if (self.state.songs.length === 0) {
+		itunesApi.getMormonTabernacleChoirData().then(response => {
+			console.log('results: ', response.results);
+			const songs = response.results
+			.filter(result => {
+				return result.artistName === 'Mormon Tabernacle Choir' && result.kind === 'song';
+			})
+			.map(result => {
+				const {
+					artworkUrl100,
+					collectionName,
+					trackName,
+					trackCount,
+					trackNumber,
+					trackPrice,
+					primaryGenreName,
+					trackViewUrl,
+					trackTimeMillis
+				} = result;
+				return {
+					artworkUrl100,
+					collectionName,
+					trackName,
+					trackCount,
+					trackNumber,
+					trackPrice,
+					primaryGenreName,
+					trackViewUrl,
+					trackTimeMillis
+				};
+			});
 
-		console.log('songs: ', songs);
-		songs.forEach(song => {
-			self.addSong(song);
-		});
+			console.log('songs: ', songs);
+			songs.forEach(song => {
+				self.addSong(song);
+			});
 
-	});
+		});
+	}
 }
