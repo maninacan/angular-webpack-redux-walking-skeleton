@@ -12,5 +12,5 @@ export default ($stateProvider, $urlRouterProvider) => {
 			template: '<mab2-main></mab2-main>'
 		});
 
-	$urlRouterProvider.otherwise('record-ordinance');
+	$urlRouterProvider.otherwise('main-1');
 }

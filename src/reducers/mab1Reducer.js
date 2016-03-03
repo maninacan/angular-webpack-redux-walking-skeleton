@@ -15,17 +15,13 @@ export default function mab1(state = INITIAL_STATE, action) {
 
 	switch (action.type) {
 		case SONG_ADDED:
-			const songs = addSongtoStateClone(state.songs, action.song);
-			return {...state, songs};
+			return {
+				...state,
+				songs: [...state.songs, action.song]
+			};
 		case MAB1_STATE_RESET:
 			return {...INITIAL_STATE};
 		default:
 			return state;
 	}
-}
-
-function addSongtoStateClone(songs, song) {
-	const newSongs = [...songs];
-	newSongs.push(song);
-	return newSongs;
 }
